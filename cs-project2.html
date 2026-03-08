@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      Development of AI-Based Student Performance Prediction Using Machine
+      Learning
+    </title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/white.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js/dist/print/pdf.css"
+      media="print"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+    />
+
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(45deg, #e3f2fd, #ffffff, #e8f5e9);
+        background-size: 400% 400%;
+        animation: bgmove 10s ease infinite;
+      }
+
+      @keyframes bgmove {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .reveal h1 {
+        font-size: 55px;
+        color: #0d47a1;
+      }
+
+      .reveal h2 {
+        color: #1b5e20;
+      }
+
+      .reveal ul {
+        font-size: 24px;
+      }
+
+      .titlebox {
+        background: #e3f2fd;
+        padding: 30px;
+        border-radius: 12px;
+      }
+
+      /* MODULE GRID */
+
+      .modulesGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .module {
+        background: #e8f5e9;
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 20px;
+        line-height: 1.4;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      /* CODE BLOCK */
+
+      pre code {
+        font-size: 16px;
+        line-height: 1.5;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      /* Export PDF Button */
+
+      .pdfBtn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #0d47a1;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+      }
+
+      .pdfBtn:hover {
+        background: #1565c0;
+      }
+
+      @media print {
+        .pdfBtn {
+          display: none;
+        }
+      }
+
+      /* Bento Grid */
+
+      .bento {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .bento a {
+        text-decoration: none;
+        color: white;
+        font-size: 22px;
+        font-weight: 600;
+        padding: 35px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+      }
+
+      .bento a:hover {
+        transform: scale(1.08);
+      }
+
+      .box1 {
+        background: #1e88e5;
+      }
+      .box2 {
+        background: #43a047;
+      }
+      .box3 {
+        background: #fb8c00;
+      }
+      .box4 {
+        background: #8e24aa;
+      }
+      .box5 {
+        background: #d81b60;
+      }
+      .box6 {
+        background: #00897b;
+      }
+      .box7 {
+        background: #5d4037;
+      }
+
+      .abstractText {
+        font-size: 26px;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button onclick="exportPDF()" class="pdfBtn">Export PDF</button>
+
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <div class="titlebox">
+            <h1>
+              Development of AI-Based Student Performance Prediction Using
+              Machine Learning
+            </h1>
+
+            <p>Machine Learning Project using Python</p>
+
+            <p><b>Team Members</b></p>
+
+            <ul>
+              <li>Mithun</li>
+              <li>Mohamed Shahjan</li>
+              <li>Sasivarman</li>
+            </ul>
+
+            <p>Department of Computer Science</p>
+          </div>
+        </section>
+
+        <section>
+          <h2>Project Index</h2>
+
+          <div class="bento">
+            <a href="#/2" class="box1">Problem Statement</a>
+            <a href="#/3" class="box2">Abstract</a>
+            <a href="#/4" class="box3">Methodology</a>
+            <a href="#/5" class="box4">Modules</a>
+            <a href="#/6" class="box5">Python Execution</a>
+            <a href="#/7" class="box6">Conclusion</a>
+            <a href="#/8" class="box7">References</a>
+          </div>
+        </section>
+
+        <section>
+          <h2>Problem Statement</h2>
+
+          <ul>
+            <li class="fragment">
+              Educational institutions struggle to monitor student performance
+              continuously.
+            </li>
+            <li class="fragment">
+              Weak students are usually identified only after final
+              examinations.
+            </li>
+            <li class="fragment">
+              Manual analysis of academic records is inefficient.
+            </li>
+            <li class="fragment">
+              Machine learning techniques can identify patterns in academic
+              data.
+            </li>
+            <li class="fragment">
+              Goal: Predict student performance early to support academic
+              improvement.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Abstract</h2>
+
+          <p class="abstractText fragment">
+            This project presents an AI based system for predicting student
+            academic performance using machine learning techniques. Student
+            academic details such as attendance, assignments, midterm marks and
+            final exam scores are used to evaluate performance. The system
+            calculates the average marks and determines whether the student will
+            pass or fail. This helps teachers identify students who require
+            additional academic support at an early stage.
+          </p>
+        </section>
+
+        <section>
+          <h2>Methodology</h2>
+
+          <ul class="abstractText">
+            <li class="fragment">
+              Collect student academic information such as attendance
+              percentage, assignment marks, midterm marks, and final exam marks.
+            </li>
+            <li class="fragment">
+              Student details are entered by the user at runtime using Python
+              input statements.
+            </li>
+            <li class="fragment">
+              The program calculates the average marks using mathematical
+              expressions.
+            </li>
+            <li class="fragment">
+              Conditional statements check whether the average marks are greater
+              than or equal to 50.
+            </li>
+            <li class="fragment">
+              Based on the condition, the system determines whether the student
+              result is Pass or Fail.
+            </li>
+            <li class="fragment">
+              Finally, the program displays the complete student report
+              including student ID, name, attendance, average marks, and final
+              result.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Modules with Description</h2>
+
+          <div class="modulesGrid">
+            <div class="module fragment">
+              <b>1. Input Module</b><br />
+              Collects student details such as ID, name, attendance and marks.
+            </div>
+
+            <div class="module fragment">
+              <b>2. Calculation Module</b><br />
+              Computes the average marks from assignment, midterm and final
+              exam.
+            </div>
+
+            <div class="module fragment">
+              <b>3. Decision Module</b><br />
+              Uses conditional statements to determine whether the student
+              passes or fails.
+            </div>
+
+            <div class="module fragment">
+              <b>4. Output Module</b><br />
+              Displays the complete student report including result.
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Module Execution using Python</h2>
+
+          <pre><code class="language-python">
+
+student_id = int(input("Enter Student ID: "))
+name = input("Enter Student Name: ")
+
+attendance = float(input("Enter Attendance Percentage: "))
+assignment = float(input("Enter Assignment Marks: "))
+midterm = float(input("Enter Midterm Marks: "))
+final_exam = float(input("Enter Final Exam Marks: "))
+
+average = (assignment + midterm + final_exam) / 3
+
+if average >= 50:
+    result = "Pass"
+else:
+    result = "Fail"
+
+print("\n--- Student Report ---")
+print("Student ID:", student_id)
+print("Name:", name)
+print("Attendance:", attendance)
+print("Average Marks:", round(average, 2))
+print("Final Result:", result)
+
+</code></pre>
+        </section>
+
+        <section>
+          <h2>Conclusion</h2>
+
+          <ul>
+            <li class="fragment">
+              The system helps evaluate student academic performance easily.
+            </li>
+            <li class="fragment">Automatic calculation reduces manual work.</li>
+            <li class="fragment">
+              Teachers can quickly identify students who may fail.
+            </li>
+            <li class="fragment">
+              Python programming provides a simple way to implement prediction
+              logic.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>References</h2>
+
+          <ul>
+            <li>
+              <a
+                href="https://github.com/mithun-srinivasan/python-project"
+                target="_blank"
+              >
+                GitHub Repository – Python Project
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://drive.google.com/file/d/17ntwbAOnoQ2CCJxhvR3txP6YWqEAtdh0/view"
+                target="_blank"
+              >
+                Project Documentation – Google Drive
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script>
+      hljs.highlightAll();
+    </script>
+
+    <script>
+      Reveal.initialize({
+        hash: true,
+        slideNumber: true,
+        controls: true,
+        progress: true,
+        transition: "convex",
+        backgroundTransition: "zoom",
+      });
+
+      function exportPDF() {
+        const pdfUrl = new URL(window.location.href);
+        pdfUrl.searchParams.set("print-pdf", "1");
+        pdfUrl.searchParams.set("autoprint", "1");
+        window.open(pdfUrl.toString(), "_blank");
+      }
+
+      const params = new URLSearchParams(window.location.search);
+      if (params.has("print-pdf") && params.get("autoprint") === "1") {
+        window.addEventListener("load", () => {
+          setTimeout(() => window.print(), 700);
+        });
+      }
+    </script>
+  </body>
+</html>
